@@ -1,87 +1,99 @@
 import { Routes, Route, Link } from "react-router-dom";
-import Home_page from '../pages/Home_page'
-import Service_page from "../pages/Service_page";
-import Trainers_page from "../pages/Trainers_page";
-import Testomonial_page from "../pages/Testomonial_page";
-import Contact_page from '../components/Contact'
-import React, {useState} from 'react'
-import hero from '../images/hero.png'
+import React, { useState } from "react";
+import Pages from '../components/Routers'
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-const navbar = () => {
- 
- const [isOpen, setIsOpen] = useState(false);
 
- const Navbar_toggle = () => {
-   setIsOpen(!isOpen);
- };
+const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
 
+  const NavbarToggle = () => {
+    setIsOpen(!isOpen);
+  };
 
   return (
     <div className="">
-      <section className="secttion1  ">
-        <div className="Main_div flex justify-between mx-20 border-b-2 border-white">
-          {/* ....LOGO...... */}
-          <div className="pt-10">
-            <h4 className="text-white text-[17px]">
-              IRON <span className="text-[#FF0000]">GYM</span>
-            </h4>
-          </div>
-          {/* .... navbar */}
-          <div className="navbar ">
-            {/* md:bg-yellow-700 lg:bg-green-800 */}
-            <nav className="  ">
-              <ul className="text-white flex justify-center pt-10">
-                <li className="px-8 text-sm text-[#FF0000]">
+      <header className="flex justify-between md:justify-around mx-3 mt-4 text-white">
+        <div className="logo pl-10 md:pl-0 ">
+          {/* md:absolute md:left-12 md:top-4  */}
+          <Link to="/"> IRON  <span className="text-red-700">GYM</span></Link>
+        </div>
+        {/*  md:relative md:left-32 md:top-0 */}
+        <div className="hidden md:block">
+          <nav>
+            <ul className="flex">
+              <li className="px-4">
+                <Link to="/Home_page">HOME</Link>
+              </li>
+              <li className="px-4">
+                {" "}
+                <Link to="/Service_page">Service</Link>
+              </li>
+              <li className="px-4">
+                {" "}
+                <Link to="/Trainers_page">Trainers</Link>
+              </li>
+              <li className="px-4">
+                {" "}
+                <Link to="/Testomonial_page">Testimonial</Link>
+              </li>
+              <li className="px-4">
+                {" "}
+                <Link to="/Contact_page">Contact</Link>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div className="btn_ hidden md:block">
+          <button className="px-2 bg-[#FF0000] text-white w-32 h-8 rounded-md hover:bg-[#ed2a2a]">
+            Get started
+          </button>
+        </div>
+
+        <div className="btn px-4  flex absolute left-[80%] top-[%] cursor-pointer">
+          <span className=" text-[20px] pl-4 block md:hidden text-white">
+            <FontAwesomeIcon icon={faBars} onClick={() => NavbarToggle()} />
+          </span>
+        </div>
+
+        {/* ............ toggle navbar */}
+        {isOpen && (
+          <div className="navbar">
+            <nav>
+              <ul className="flex flex-col text-white">
+                <li className="px-4 py-4">
                   <Link to="/Home_page">HOME</Link>
                 </li>
-                <li className="px-8 text-sm">
-                  <Link to="/Service_page">SERVICE</Link>
+                <li className="px-4 py-4">
+                  {" "}
+                  <Link to="/Service_page">Service</Link>
                 </li>
-                <li className="px-8 text-sm">
-                  <Link to="/Trainers_page">TRAINERS</Link>
+                <li className="px-4 py-4">
+                  {" "}
+                  <Link to="/Trainers_page">Trainers</Link>
                 </li>
-                <li className="px-8 text-sm">
-                  <Link to="/Testomonial_page">TESTEMONIAL</Link>
+                <li className="px-4 py-4">
+                  {" "}
+                  <Link to="/Testomonial_page">Testimonial</Link>
                 </li>
-                <li className="px-8 text-sm">
-                  <Link to="/Contact_page">CONTACT</Link>
+                <li className="px-4 py-4">
+                  {" "}
+                  <Link to="/Contact_page">Contact</Link>
                 </li>
               </ul>
             </nav>
-          </div>
-          {/* ......Button */}
-          <div className="py-6 ">
-            <button className="btn_1 bg-[#FF0000] text-white w-40 h-12 rounded-md hover:bg-[#ed2a2a]">
-              Started Now
+            <button className="px-2 bg-[#FF0000] text-white w-32 h-8 rounded-md hover:bg-[#ed2a2a] ml-4 md:ml-0">
+              Get started
             </button>
-            <span
-              onClick={Navbar_toggle}
-              className="text-white md:hidden fabar_iocn  "
-            >
-              <FontAwesomeIcon icon={faBars} />
-            </span>
-            {isOpen && (
-              <nav className="text-white">
-                <li>a</li>
-                <li>b</li>
-              </nav>
-            )}
           </div>
-        </div>
-        {/* ............pages */}
-        <Routes>
-          <Route path="/Home_page" element={<Home_page />}></Route>
-          <Route path="/Service_page" element={<Service_page />}></Route>
-          <Route path="/Trainers_page" element={<Trainers_page />}></Route>
-          <Route
-            path="/Testomonial_page"
-            element={<Testomonial_page />}
-          ></Route>
-          <Route path="/Contact_page" element={<Contact_page />}></Route>
-        </Routes>
-      </section>
+        )}
+
+        {/* ...........end toggle bar */}
+      </header>
+      {/* ............pages */}
+      <Pages />
     </div>
   );
 };
-export default navbar;
+
+export default Navbar;
