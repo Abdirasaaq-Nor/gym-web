@@ -8,8 +8,9 @@ function HomePage() {
       <section>
         <div className="main mt-20 ml-10 flex justify-between">
           <div className="left">
-            <h1 className=" text-white text-[30px] w-[300px] md:text-6xl md:w-[500px]">
-              READY TO TRAINs{" "}
+            <h1 className="ready text-white text-[30px] w-[300px] md:text-[60px] md:w-[500px]">
+              READY TO TRAINs
+              <br />
               <span className="text-[#FF0000] pt-10 ">YOUR BODY</span>
             </h1>
             <p className="text-white md:w-[360px] py-6">
@@ -51,11 +52,11 @@ function HomePage() {
       {/* ......... wny you choose */}
       <section className="why_choose mt-[40px] md:mt-[60px]  mb-[70px]">
         <div className="main">
-          <div className="flex flex-col justify-center items-center">
+          <div className="why_choose flex flex-col justify-center items-center mt-[60px] lg:mt-[120px]">
             <h1 className="text-white text-[30px] md:text-5xl">
-              WHY <span className="text-red-500">CHOOSE US</span>
+              WHY <span className="text-[#FF0000] ">CHOOSE US</span>
             </h1>
-            <p className="medium_ md:w-[400px] lg:w-[400px] pt-4 text-center text-[13px] text-gray-200">
+            <p className="medium_ md:w-[400px] lg:w-[400px] pt-4 text-center text-[13px] text-gray-200 font-sans">
               Gym workouts offer a versatile and customisable experience,
               allowing everyone to set specific fitness goals.
             </p>

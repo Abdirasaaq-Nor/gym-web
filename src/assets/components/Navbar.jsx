@@ -13,10 +13,10 @@ const Navbar = () => {
 
   return (
     <div className="">
-      <header className="flex justify-between md:justify-around mx-3 mt-4 text-white">
-        <div className="logo pl-10 md:pl-0 ">
+      <header className="flex justify-between  lg:justify-between lg:mx-20 md:justify-around mx-3 mt-4 text-white">
+        <div className="logo pl-10 md:pl-0  lg:mr-0">
           {/* md:absolute md:left-12 md:top-4  */}
-          <Link to="/"> IRON  <span className="text-red-700">GYM</span></Link>
+          <Link className="text-[30px]" to="/"> IRON  <span className="text-red-700">GYM</span></Link>
         </div>
         {/*  md:relative md:left-32 md:top-0 */}
         <div className="hidden md:block">

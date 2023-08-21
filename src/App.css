@@ -1,3 +1,7 @@
+/* //Bebas Neue Font */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+/* //Poppins Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,600;1,900&display=swap');
 body {
   margin: 0;
   padding: 0;
@@ -14,6 +18,21 @@ body {
   height: 340px;
 }
 
+/* .........about us */
+.ipad_text{
+font-family: 'Bebas Neue', sans-serif;
+
+}
+/* ........service */
+.why_choose{
+  font-family: 'Bebas Neue', sans-serif;
+}
+
+/* ........ homepage */
+.ready{
+  
+  font-family: 'Bebas Neue', sans-serif;
+}
 
 
 
@@ -46,6 +65,7 @@ body {
   }
  .medium_{
   width: 300px;
+ 
  }
 .ipad_text{
  text-align: left;
